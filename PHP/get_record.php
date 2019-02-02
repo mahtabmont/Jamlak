@@ -1,12 +1,13 @@
 <?php
 //returns a record of the main table given its ID 
+require_once "dbconnect.php";
 $file=fopen("gerrecord.log","w");
 fwrite($file,"salaam");
 if ( isset( $_POST["ID"] ) )
 {
   $ID = $_POST["ID"];
   fwrite($file,$ID);
-  require_once "dbconnect.php";
+  
   $sql = "select * from `amlakin` where ID=" . $ID ;
 
   $result = $conn->query($sql);
